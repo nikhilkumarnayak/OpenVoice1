@@ -117,10 +117,10 @@ def predict(prompt, style, audio_file_pth, mic_file_path, use_mic, agree):
             None,
             None,
         )
-    if len(prompt) > 1000:
-        text_hint += f"[ERROR] Text length limited to 1000 characters for this demo, please try shorter text. You can clone our open-source repo and try for your usage \n"
+    if len(prompt) > 2000:
+        text_hint += f"[ERROR] Text length limited to 2000 characters for this demo, please try shorter text. You can clone our open-source repo and try for your usage \n"
         gr.Warning(
-            "Text length limited to 1000 characters for this demo, please try shorter text. You can clone our open-source repo for your usage"
+            "Text length limited to 2000 characters for this demo, please try shorter text. You can clone our open-source repo for your usage"
         )
         return (
             text_hint,
@@ -225,7 +225,7 @@ with gr.Blocks(analytics_enabled=False) as demo:
             # with gr.Row():
             #     gr.Markdown(description)
         with gr.Column():
-            gr.Video('resources/video/3_0.mp4', autoplay=True)
+            gr.Video('resources/videos/3_0.mp4', autoplay=True)
             
     with gr.Row():
         gr.HTML(wrapped_markdown_content)
@@ -234,7 +234,7 @@ with gr.Blocks(analytics_enabled=False) as demo:
         with gr.Column():
             input_text_gr = gr.Textbox(
                 label="Text Prompt",
-                info="One or two sentences at a time is better. Up to 1000 text characters.",
+                info="One or two sentences at a time is better. Up to 2000 text characters.",
                 value="Indore, situated in central India, is a bustling city famed for its rich cultural heritage and delectable street food scene. With a blend of historic landmarks and modern developments, it captivates visitors with its vibrant charm.",
             )
             style_gr = gr.Dropdown(
