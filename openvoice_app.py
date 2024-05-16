@@ -117,10 +117,10 @@ def predict(prompt, style, audio_file_pth, mic_file_path, use_mic, agree):
             None,
             None,
         )
-    if len(prompt) > 500:
-        text_hint += f"[ERROR] Text length limited to 500 characters for this demo, please try shorter text. You can clone our open-source repo and try for your usage \n"
+    if len(prompt) > 1000:
+        text_hint += f"[ERROR] Text length limited to 1000 characters for this demo, please try shorter text. You can clone our open-source repo and try for your usage \n"
         gr.Warning(
-            "Text length limited to 500 characters for this demo, please try shorter text. You can clone our open-source repo for your usage"
+            "Text length limited to 1000 characters for this demo, please try shorter text. You can clone our open-source repo for your usage"
         )
         return (
             text_hint,
@@ -168,38 +168,16 @@ def predict(prompt, style, audio_file_pth, mic_file_path, use_mic, agree):
 title = "MyShell OpenVoice"
 
 description = """
-We introduce OpenVoice, a versatile instant voice cloning approach that requires only a short audio clip from the reference speaker to replicate their voice and generate speech in multiple languages. OpenVoice enables granular control over voice styles, including emotion, accent, rhythm, pauses, and intonation, in addition to replicating the tone color of the reference speaker. OpenVoice also achieves zero-shot cross-lingual voice cloning for languages not included in the massive-speaker training set.
 """
 
 markdown_table = """
-<div align="center" style="margin-bottom: 10px;">
-
-|               |               |               |
-| :-----------: | :-----------: | :-----------: | 
-| **OpenSource Repo** | **Project Page** | **Join the Community** |        
-| <div style='text-align: center;'><a style="display:inline-block,align:center" href='https://github.com/myshell-ai/OpenVoice'><img src='https://img.shields.io/github/stars/myshell-ai/OpenVoice?style=social' /></a></div> | [OpenVoice](https://research.myshell.ai/open-voice) | [![Discord](https://img.shields.io/discord/1122227993805336617?color=%239B59B6&label=%20Discord%20)](https://discord.gg/myshell) |
-
-</div>
 """
 
 markdown_table_v2 = """
-<div align="center" style="margin-bottom: 2px;">
 
-|               |               |               |              |
-| :-----------: | :-----------: | :-----------: | :-----------: | 
-| **OpenSource Repo** | <div style='text-align: center;'><a style="display:inline-block,align:center" href='https://github.com/myshell-ai/OpenVoice'><img src='https://img.shields.io/github/stars/myshell-ai/OpenVoice?style=social' /></a></div> |  **Project Page** |  [OpenVoice](https://research.myshell.ai/open-voice) |     
-
-| | |
-| :-----------: | :-----------: |
-**Join the Community** |   [![Discord](https://img.shields.io/discord/1122227993805336617?color=%239B59B6&label=%20Discord%20)](https://discord.gg/myshell) |
-
-</div>
 """
 content = """
-<div>
-  <strong>For multi-lingual & cross-lingual examples, please refer to <a href='https://github.com/myshell-ai/OpenVoice/blob/main/demo_part2.ipynb'>this jupyter notebook</a>.</strong>
-  This online demo mainly supports <strong>English</strong>. The <em>default</em> style also supports <strong>Chinese</strong>. But OpenVoice can adapt to any other language as long as a base speaker is provided.
-</div>
+
 """
 wrapped_markdown_content = f"<div style='border: 1px solid #000; padding: 10px;'>{content}</div>"
 
@@ -237,7 +215,7 @@ with gr.Blocks(analytics_enabled=False) as demo:
             with gr.Row():
                 gr.Markdown(
                     """
-                    ## <img src="https://huggingface.co/spaces/myshell-ai/OpenVoice/raw/main/logo.jpg" height="40"/>
+                    ## <img src="https://github.com/nikhilkumarnayak/company_logos/blob/main/logos/infobean_logo_full.png" height="40"/>
                     """
                 )
             with gr.Row():    
@@ -245,7 +223,7 @@ with gr.Blocks(analytics_enabled=False) as demo:
             with gr.Row():
                 gr.Markdown(description)
         with gr.Column():
-            gr.Video('https://github.com/myshell-ai/OpenVoice/assets/40556743/3cba936f-82bf-476c-9e52-09f0f417bb2f', autoplay=True)
+            gr.Video('https://drive.google.com/file/d/1v-s30YfSawPVIOiRZxBmTjqPlViTjCXq/view?resourcekey', autoplay=True)
             
     with gr.Row():
         gr.HTML(wrapped_markdown_content)
@@ -254,8 +232,8 @@ with gr.Blocks(analytics_enabled=False) as demo:
         with gr.Column():
             input_text_gr = gr.Textbox(
                 label="Text Prompt",
-                info="One or two sentences at a time is better. Up to 500 text characters.",
-                value="He hoped there would be stew for dinner, turnips and carrots and bruised potatoes and fat mutton pieces to be ladled out in thick, peppered, flour-fattened sauce.",
+                info="One or two sentences at a time is better. Up to 1000 text characters.",
+                value="Indore, situated in central India, is a bustling city famed for its rich cultural heritage and delectable street food scene. With a blend of historic landmarks and modern developments, it captivates visitors with its vibrant charm.",
             )
             style_gr = gr.Dropdown(
                 label="Style",
