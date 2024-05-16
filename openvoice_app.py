@@ -177,7 +177,9 @@ markdown_table_v2 = """
 
 """
 content = """
-
+<div>
+  This online demo mainly supports <strong>English</strong>. The <em>default</em> style also supports <strong>Chinese</strong>. But OpenVoice can adapt to any other language as long as a base speaker is provided.
+</div>
 """
 wrapped_markdown_content = f"<div style='border: 1px solid #000; padding: 10px;'>{content}</div>"
 
@@ -215,7 +217,7 @@ with gr.Blocks(analytics_enabled=False) as demo:
             with gr.Row():
                 gr.Markdown(
                     """
-                    ## <img src="https://github.com/nikhilkumarnayak/company_logos/blob/main/logos/infobean_logo_full.png" height="40"/>
+                    ## <img src="https://github.com/nikhilkumarnayak/company_logos/blob/main/logos/infobean_logo_full.jpg" height="60"/>
                     """
                 )
             with gr.Row():    
@@ -223,7 +225,7 @@ with gr.Blocks(analytics_enabled=False) as demo:
             with gr.Row():
                 gr.Markdown(description)
         with gr.Column():
-            gr.Video('https://drive.google.com/file/d/1v-s30YfSawPVIOiRZxBmTjqPlViTjCXq/view?resourcekey', autoplay=True)
+            gr.Video('https://github.com/nikhilkumarnayak/videos/blob/main/3_0.mp4', autoplay=True)
             
     with gr.Row():
         gr.HTML(wrapped_markdown_content)
