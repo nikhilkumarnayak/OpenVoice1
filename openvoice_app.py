@@ -220,12 +220,12 @@ with gr.Blocks(analytics_enabled=False) as demo:
                     ## <img src="https://github.com/nikhilkumarnayak/company_logos/blob/main/logos/infobean_logo_full.jpg" height="60"/>
                     """
                 )
-            with gr.Row():    
-                gr.Markdown(markdown_table_v2)
-            with gr.Row():
-                gr.Markdown(description)
-        with gr.Column():
-            gr.Video('https://github.com/nikhilkumarnayak/videos/blob/main/3_0.mp4', autoplay=True)
+            # with gr.Row():    
+            #     gr.Markdown(markdown_table_v2)
+            # with gr.Row():
+            #     gr.Markdown(description)
+        # with gr.Column():
+        #     gr.Video('https://github.com/nikhilkumarnayak/videos/blob/main/3_0.mp4', autoplay=True)
             
     with gr.Row():
         gr.HTML(wrapped_markdown_content)
