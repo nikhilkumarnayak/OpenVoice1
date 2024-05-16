@@ -217,7 +217,7 @@ with gr.Blocks(analytics_enabled=False) as demo:
             with gr.Row():
                 gr.Markdown(
                     """
-                    ## <img src="resources/infobean_logo_full.jpg" height="60"/>
+                    ## <img src="{os.path.abspath('resources/infobean_logo_full.jpg')}" height="40"/>
                     """
                 )
             # with gr.Row():    
