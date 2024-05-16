@@ -224,8 +224,8 @@ with gr.Blocks(analytics_enabled=False) as demo:
             #     gr.Markdown(markdown_table_v2)
             # with gr.Row():
             #     gr.Markdown(description)
-        # with gr.Column():
-        #     gr.Video('https://github.com/nikhilkumarnayak/videos/blob/main/3_0.mp4', autoplay=True)
+        with gr.Column():
+            gr.Video('https://github.com/nikhilkumarnayak/videos/blob/main/3_0.mp4', autoplay=True)
             
     with gr.Row():
         gr.HTML(wrapped_markdown_content)
